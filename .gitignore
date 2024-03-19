@@ -1,0 +1,4 @@
+zig-out/
+zig-cache/
+libraries/raylib/include/*
+libraries/raylib/lib/*
