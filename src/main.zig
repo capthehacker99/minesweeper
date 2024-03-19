@@ -244,6 +244,8 @@ pub fn main() void {
     };
     const flag_texture: RL.Texture2D = RL.LoadTexture("./textures/flag.png");
     const bomb_texture: RL.Texture2D = RL.LoadTexture("./textures/bomb.png");
+    defer RL.UnloadTexture(bomb_texture);
+    defer RL.UnloadTexture(flag_texture);
     var rando = initRandBlk: {
         var sm = std.rand.SplitMix64.init(@bitCast(std.time.microTimestamp()));
         break :initRandBlk std.rand.Xoshiro256.init(sm.next());
